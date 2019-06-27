@@ -31,8 +31,16 @@
 
 					<small>Ultima modificação: {{ $vaga->updated_at }}</small><br><br>
 
-						<h6 class="mb-1">0 Candidatos interessados</h6>
-						<h6 class="mb-1">0 Candidatos entrevistados</h6>
+						<h6 class="mb-1">
+                            @foreach($candidaturas as $applications)
+                               @if($applications->id_vacancy == $vaga->id)
+                                {{ $applications->count()  }} Candidatos Interessados
+                               @else
+                                   0 Candidatos Interessados
+                               @endif
+                            @endforeach
+                        </h6>
+
 
 
 					<div class="btn-group" role="group" aria-label="Basic example">

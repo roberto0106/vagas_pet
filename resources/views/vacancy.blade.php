@@ -37,7 +37,6 @@
                                     <td>
                                         {!! Form::open(['route' => 'job_applications']) !!}
                                         {!! Form::hidden('id_vacancy', $vagas->id) !!}
-                                        {!! Form::hidden('id_candidate', Auth::user()->id) !!}
                                         {!! Form::hidden('id_company', $vagas->id_company) !!}
                                         {!! Form::submit('Canidatar-se', array('class' => 'btn btn-success')) !!}
                                         {!! Form::close() !!}

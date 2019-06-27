@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\JobApplication;
 use App\Vacancy;
 use Illuminate\Http\Request;
 
@@ -27,9 +28,13 @@ class CompanyController extends Controller
     public function minhasvagas(){
         $user = \Auth::user();
         $usertype = $user->usertype;
-        $minhasvagas = Vacancy::where('company',$usertype->name)->get();
 
-        return view('company.my_vacancy',compact('minhasvagas'));
+        $minhasvagas = Vacancy::where('id_company',$usertype->id)->get();
+
+        $candidaturas =JobApplication::where('id_company',$usertype->id)->get();
+
+
+        return view('company.my_vacancy',compact('minhasvagas','candidaturas'));
     }
 
     public function novavaga(){

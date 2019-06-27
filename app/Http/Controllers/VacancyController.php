@@ -9,6 +9,8 @@ class VacancyController extends Controller
 {
     public function index()
     {
+
+
         $vagas = Vacancy::all();
         return view('vacancy',compact('vagas'));
     }
