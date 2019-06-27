@@ -9,15 +9,15 @@ class JobApplication extends Model
 
 
     public function candidate(){
-        return $this->hasMany('App\Candidate','id_candidate');
+        return $this->hasMany('App\Candidate','id');
     }
 
     public function company(){
-        return $this->hasMany('App\Company','id_company');
+        return $this->belongsTo('App\Company','id');
     }
 
     public function vacancy(){
-        return $this->hasMany('App\Vacancy','id_vacancy');
+        return $this->hasMany('App\Vacancy','id');
     }
 
 }

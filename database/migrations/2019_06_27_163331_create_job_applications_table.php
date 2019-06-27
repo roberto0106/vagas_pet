@@ -18,21 +18,12 @@ class CreateJobApplicationsTable extends Migration
 
             $table->bigInteger('id_vacancy')->unsigned()->nullable();
 
-            $table->foreign('id_vacancy')
-                ->references('id')->on('vacancies')
-                ->onDelete('cascade');
 
             $table->bigInteger('id_company')->unsigned()->nullable();
 
-            $table->foreign('id_company')
-                ->references('id')->on('companies')
-                ->onDelete('cascade');
 
             $table->bigInteger('id_candidate')->unsigned()->nullable();
 
-            $table->foreign('id_candidate')
-                ->references('id')->on('candidates')
-                ->onDelete('cascade');
 
             $table->timestamps();
         });

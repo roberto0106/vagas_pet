@@ -11,6 +11,7 @@ class JobApplicationController extends Controller
 
         $application = new JobApplication;
 
+        $application->id_vacancy = $request->id_company;
         $application->id_company = $request->id_company;
         $application->id_candidate = $request->id_candidate;
 
