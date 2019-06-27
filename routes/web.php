@@ -29,6 +29,9 @@ Route::get('/steptwo_empresa','CompanyController@steptwo');
 Route::get('/steptwo_candidato','CandidateController@steptwo');
 Route::get('/download_portifolio','CandidateController@download_photo')->name('downloadportifolio');
 
+Route::post('/job_applications', 'JobApplicationController@application')->name('job_applications');
+
+
 Route::post('/insert_new_photo','PhotoController@upload_photo')->name('insert_new_photo');
 Route::post('/delete_photo','PhotoController@delete_photo')->name('delete_photo');
 

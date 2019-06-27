@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dc08f87-0f40-4271-8aae-4be09cfa5987" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/JobApplicationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/JobApplication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_06_27_163331_create_job_applications_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/job_applications/job_application.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/my_vacancy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/my_vacancy.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/update_vanacy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/update_vacancy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Vacancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Vacancy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_27_103714_create_vacancies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_27_103714_create_vacancies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vacancy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vacancy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561400233490</updated>
-      <workItem from="1561400234834" duration="40635000" />
+      <workItem from="1561400234834" duration="45543000" />
     </task>
     <task id="LOCAL-00001" summary="Criando a table portifolio">
       <created>1561585342398</created>
@@ -190,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561661476509</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Corrigindo links">
+      <created>1561663125473</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561663125473</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +224,8 @@
     <MESSAGE value="Testando relacionamentos entre a tabela candidatos e portifolios" />
     <MESSAGE value="Avançando nos relacionamentos dos Models" />
     <MESSAGE value="Corrigindo menus e acrescentando funcionalidade de apagar a foto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrigindo menus e acrescentando funcionalidade de apagar a foto" />
+    <MESSAGE value="Corrigindo links" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrigindo links" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

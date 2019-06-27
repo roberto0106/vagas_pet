@@ -13,10 +13,6 @@ class Vacancy extends Model
         'id_company'
     ];
 
-    public function candidates(){
-        return $this->hasMany('App\Candidate','id');
-    }
-
     public function companies(){
         return $this->belongsTo('App\Company','id');
     }
