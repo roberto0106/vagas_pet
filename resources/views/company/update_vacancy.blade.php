@@ -12,16 +12,17 @@
 
 				<div class="card-body">
 
-					{!! Form::open(['route' => 'updatevaga']) !!}
+					{!! Form::open(['route' => 'update_vacancies']) !!}
 
 					{!! Form::label('vaga','Vaga:') !!}<br>
-					<input type="text" name="vaga" value="{{ $vaga->vaga }}" disabled>
+					<input type="text" name="vaga" value="{{ $vaga->vacancy }}" disabled="disabled">
 					{!! Form::hidden('id', $vaga->id) !!}
-					{!! Form::hidden('vaga', $vaga->vaga) !!}
+                    {!! Form::hidden('vaga', $vaga->vacancy) !!}
+
 					<hr>
 
 					{!! Form::label('descricao','Descrição:') !!}<br>
-					<textarea name="descricao" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$vaga->descricao}}</textarea>
+					<textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"  value="{{ $vaga->vacancy }}">{{$vaga->description}}</textarea>
 
 					<hr>
 

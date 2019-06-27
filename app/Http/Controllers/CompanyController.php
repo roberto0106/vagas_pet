@@ -65,10 +65,13 @@ class CompanyController extends Controller
     }
 
     public function updatevaga(Request $request){
-        dd($request);
+
         $vaga = Vacancy::find($request->id);
-        $vaga->vaga = $request->get('vaga');
+
+        $vaga->vacancy = $request->get('vaga');
+        $vaga->description = $request->get('description');
         $vaga->save();
+
         return redirect()->route('my_vacancies');
     }
 }

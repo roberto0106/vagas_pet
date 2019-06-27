@@ -15,7 +15,9 @@
 
 	<div class="row justify-content-center">
 		<div class="col-md-12">
-			<div class="list-group">
+
+            @if(count($minhasvagas)>0)
+            <div class="list-group">
 				@foreach ($minhasvagas as $vaga)
 
 					<div class="d-flex w-100 justify-content-between">
@@ -50,6 +52,10 @@
 				<hr>
 				@endforeach
 			</div>
+            @else
+            <h3>Sua empresa ainda não tem vagas cadastradas. <br> Clique no botão "+" para criar uma nova vaga.</h3>
+            @endif
+
 		</div>
 	</div>
 
