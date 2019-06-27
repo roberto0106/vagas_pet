@@ -30,6 +30,8 @@ Route::get('/steptwo_candidato','CandidateController@steptwo');
 Route::get('/download_portifolio','CandidateController@download_photo')->name('downloadportifolio');
 
 Route::post('/insert_new_photo','PhotoController@upload_photo')->name('insert_new_photo');
+Route::post('/delete_photo','PhotoController@delete_photo')->name('delete_photo');
+
 Route::post('/update_steptwo_candidato','CandidateController@update')->name('update_steptwo_candidato');
 Route::post('/update_steptwo_empresa','CompanyController@update')->name('update_steptwo_empresa');
 

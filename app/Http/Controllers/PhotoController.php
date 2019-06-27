@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PhotoController extends Controller
 {
     public function view_create_photos(){
-        $user = App\Auth::user();
+        $user = \Auth::user();
         $usertype = $user->usertype;
 
         $fotos = Photo::where('id_candidate',$usertype->id)->get();
@@ -19,7 +19,7 @@ class PhotoController extends Controller
     public function upload_photo(Request $request){
 
          //Resgatando dados do usuário logado
-        $user = App\Auth::user();
+        $user = \Auth::user();
         $usertype = $user->usertype;
 
         //Criando novo model Photo
@@ -55,5 +55,16 @@ class PhotoController extends Controller
         //Redirecionando para a rota Vagas
         return redirect()->route('view_create_photos');
 
+    }
+
+    public function delete_photo(Request $request){
+
+        $user = \Auth::user();
+        $usertype = $user->usertype;
+
+        $vaga = Photo::find($request->id);
+        $vaga->delete();
+
+        return redirect()->route('view_create_photos');
     }
 }

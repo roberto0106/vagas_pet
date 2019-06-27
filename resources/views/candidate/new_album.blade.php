@@ -63,6 +63,11 @@
                                         </div>
                                     </li>
 
+                                    {!! Form::open(['route' => 'delete_photo']) !!}
+                                    {!! Form::hidden('id', $object->id) !!}
+                                    <input type="submit" name="apagarvaga" value="Apagar" class="btn btn-outline-danger" style="margin: 5px;">
+                                    {!! Form::close() !!}
+
                                 @endforeach
                             </ul>
                         @else

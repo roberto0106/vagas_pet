@@ -37,6 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
             @isset(Auth::user()->usertype_type)
+               {{ Auth::user()->usertype_type }}
 
                     @if ( Auth::user()->usertype_type == "App\Company")
                         <a href="{{ route('my_vacancies') }}" class="nav-link">Minhas Vagas</a>
