@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCandidatoTable extends Migration
+class CreatePhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,17 @@ class CreateCandidatoTable extends Migration
      */
     public function up()
     {
-        Schema::create('candidato', function (Blueprint $table) {
+        Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome')->nullable();
-            $table->string('sobrenome')->nullable();
-            $table->string('portifolio_photo_1')->nullable();
+
+            $table->bigInteger('id_candidate')->unsigned()->nullable();
+
+            $table->foreign('id_candidate')
+                ->references('id')->on('candidates')
+                ->onDelete('cascade');
+
+            $table->string('path_photo')->nullable();
+
             $table->timestamps();
         });
     }
@@ -29,6 +35,6 @@ class CreateCandidatoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidato');
+        Schema::dropIfExists('photos');
     }
 }

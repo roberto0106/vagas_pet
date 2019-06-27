@@ -38,12 +38,12 @@
                 <!-- Left Side Of Navbar -->
             @isset(Auth::user()->usertype_type)
 
-                    @if ( Auth::user()->usertype_type == "App\Empresa")
-                        <a href="{{ route('minhasvagas') }}" class="nav-link">Minhas Vagas</a>
-                        <a href="{{ route('minhasvagas') }}" class="nav-link">Meu perfil</a>
-                    @elseif (Auth::user()->usertype_type == "App\Candidato")
-                        <a href="{{ route('minhasvagas') }}" class="nav-link">Minhas Candidaturas</a>
-                        <a href="{{ route('minhasvagas') }}" class="nav-link">Meu perfil</a>
+                    @if ( Auth::user()->usertype_type == "App\Company")
+                        <a href="{{ route('my_vacancies') }}" class="nav-link">Minhas Vagas</a>
+                        <a href="{{ route('my_vacancies') }}" class="nav-link">Meu perfil</a>
+                    @elseif (Auth::user()->usertype_type == "App\Candidate")
+                        <a href="{{ route('my_vacancies') }}" class="nav-link">Minhas Candidaturas</a>
+                        <a href="{{ route('view_create_photos') }}" class="nav-link">Meu perfil</a>
                     @endif
 
             @endisset

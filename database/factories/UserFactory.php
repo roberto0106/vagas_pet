@@ -2,9 +2,6 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
-use App\Candidato;
-use App\Vagas;
-use App\User_type;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -47,7 +44,7 @@ $factory->define(Candidato::class, function (Faker $faker) {
 $factory->define(Vagas::class, function (Faker $faker) {
     return [
         'vaga' => $faker->jobTitle,
-        'empresa' => $faker->company,
+        'company' => $faker->company,
         'id_candidato' => $faker->numberBetween($min = 1, $max =50)
     ];
 });

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Candidate;
+use App\Company;
 use App\User;
-use App\Empresa;
-use App\Candidato;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
        if ($data['type']==1) {
             $this->cadastroEmpresa($user);
             $this->redirectTo = '/steptwo_empresa';
-            
+
         }else{
             $this->cadastroCandidato($user);
             $this->redirectTo = '/steptwo_candidato';
@@ -71,21 +71,21 @@ class RegisterController extends Controller
     }
 
     private function cadastroEmpresa($user){
-        $empresa = Empresa::create([
+        $empresa = Company::create([
 
         ]);
 
         $user->usertype()->associate($empresa);
         $user->save();
-       
+
     }
 
         private function cadastroCandidato($user){
-        $candidato = Candidato::create([
+        $candidato = Candidate::create([
 
         ]);
-        
+
         $user->usertype()->associate($candidato);
-        $user->save(); 
+        $user->save();
     }
 }

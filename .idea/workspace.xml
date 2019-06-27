@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4dc08f87-0f40-4271-8aae-4be09cfa5987" name="Default Changelist" comment="" />
+    <list default="true" id="4dc08f87-0f40-4271-8aae-4be09cfa5987" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Candidate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CandidateController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PhotoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VacancyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Photo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Vacancy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_06_27_135057_create_photos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/candidate/new_album.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Candidato.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Empresa.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CandidatoController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VagasController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Vagas.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_30_213212_create_candidato_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_27_103714_create_vacancies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_30_221303_create_vagas_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_06_172706_create_empresa_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_27_103526_create_companies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_26_183241_create_portifolio_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_27_102353_create_candidates_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/candidatos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/candidates.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/empresa/minhasvagas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/my_vacancy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/empresa/novavaga.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/new_vacancy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/empresa/updatevaga.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/update_vanacy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vagas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vacancy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +48,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -106,15 +139,19 @@
   <component name="ProjectId" id="1N6SpEOuHCkk7M9CGQhxaE9mKMi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/cmder/vendor/git-for-windows/bin/git.exe" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -133,11 +170,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.Portifolio.php">
+    <configuration name="Portifolio.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vagas_pet/Portifolio.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Portifolio.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -149,8 +194,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561400233490</updated>
-      <workItem from="1561400234834" duration="12173000" />
+      <workItem from="1561400234834" duration="37934000" />
     </task>
+    <task id="LOCAL-00001" summary="Criando a table portifolio">
+      <created>1561585342398</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561585342398</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,5 +219,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Criando a table portifolio" />
+    <MESSAGE value="Testando relacionamentos entre a tabela candidatos e portifolios" />
+    <MESSAGE value="Avançando nos relacionamentos dos Models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avançando nos relacionamentos dos Models" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/CandidateController.php</url>
+          <line>62</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\CandidateController" />
+            <option name="methodName" value="download_photo" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

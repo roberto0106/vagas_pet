@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Vagas;
-use App\Candidato;
+use App\Vacancy;
+use App\Candidate;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,10 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $vagas = Vagas::All();
+        $vagas = Vacancy::All();
         $vagas->ocorrencias = $vagas->count();
 
-        $candidatos = Candidato::All();
+        $candidatos = Candidate::All();
         $candidatos->ocorrencias = $candidatos->count();
         //dd($candidatos->ocorrencias);
         return view('dashboard', compact('vagas','candidatos'));

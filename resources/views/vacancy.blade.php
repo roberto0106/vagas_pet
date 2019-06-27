@@ -30,8 +30,8 @@
                            @foreach($vagas as $vagas)
                            <tr>
                               <td> {{$vagas->id}} </td>
-                              <td> {{$vagas->empresa}} </td>
-                              <td> {{$vagas->vaga}} </td>
+                              <td> {{$vagas->company}} </td>
+                              <td> {{$vagas->vacancy}} </td>
                               <td> {{$vagas->created_at}} </td>
                               <td> {{$vagas->updated_at}} </td>
                               <td> <a href="" class="btn btn-primary">Candidatar-se</a></td>

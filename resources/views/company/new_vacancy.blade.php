@@ -11,7 +11,7 @@
 
 				<div class="card-body">
 
-					{!! Form::open(['route' => 'createvaga']) !!}
+					{!! Form::open(['route' => 'create_vacancies']) !!}
 
 					{!! Form::label('vaga','Vaga:') !!}<br>
 					{!! Form::text('vaga', '', ['placeholder' => 'Preencha este campo'], ['class' => 'form-control']) !!}
