@@ -34,15 +34,14 @@ class CompanyController extends Controller
         $user = \Auth::user();
         $usertype = $user->usertype;
         $minhasvagas = Vacancy::where('id_company', $usertype->id)->get();
-
         $contagem = $minhasvagas->count();
 
         $chart = new PulseChart();
-        $chart->labels(['Vagas', 'Candidaturas']);
-        $chart->dataset('Conversão','bar',[$contagem,5]);
+        $chart->labels(['Vagas', 'Candid']);
+        $chart->dataset('my dataset 1', 'line', [$contagem, 1])
+        ->options(['displayLegend',0]);
 
-
-        return view('company.my_vacancy', compact('minhasvagas','chart'));
+        return view('company.my_vacancy', compact('minhasvagas', 'chart'));
     }
 
     public function novavaga()
