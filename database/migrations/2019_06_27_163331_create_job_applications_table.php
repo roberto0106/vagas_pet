@@ -15,15 +15,14 @@ class CreateJobApplicationsTable extends Migration
     {
         Schema::create('job_applications', function (Blueprint $table) {
             $table->bigIncrements('id');
-
             $table->bigInteger('id_vacancy')->unsigned()->nullable();
+            $table->foreign('id_vacancy')
+                ->references('id')->on('vacancies')
+                ->onDelete('cascade');
 
 
             $table->bigInteger('id_company')->unsigned()->nullable();
-
-
             $table->bigInteger('id_candidate')->unsigned()->nullable();
-
 
             $table->timestamps();
         });

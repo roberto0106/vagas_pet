@@ -9,7 +9,7 @@ class JobApplication extends Model
 
 
     public function candidate(){
-        return $this->hasMany('App\Candidate','id');
+        return $this->belongsToMany('App\Candidate','id');
     }
 
     public function company(){
@@ -17,7 +17,7 @@ class JobApplication extends Model
     }
 
     public function vacancy(){
-        return $this->hasMany('App\Vacancy','id');
+        return $this->hasOne('App\Vacancy','id');
     }
 
 }
