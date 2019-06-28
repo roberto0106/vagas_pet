@@ -11,6 +11,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/957035a847.js"></script>
+
+
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -40,9 +44,11 @@
                {{ Auth::user()->usertype_type }}
 
                     @if ( Auth::user()->usertype_type == "App\Company")
+                        <a href="{{ url('/home') }}">Home</a>
                         <a href="{{ route('my_vacancies') }}" class="nav-link">Minhas Vagas</a>
                         <a href="{{ route('my_vacancies') }}" class="nav-link">Meu perfil</a>
                     @elseif (Auth::user()->usertype_type == "App\Candidate")
+                        <a href="{{ url('/home') }}">Home</a>
                         <a href="{{ route('my_vacancies') }}" class="nav-link">Minhas Candidaturas</a>
                         <a href="{{ route('view_create_photos') }}" class="nav-link">Meu perfil</a>
                     @endif
@@ -91,6 +97,8 @@
         @yield('content')
         <br>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+    {!! $chart->script() !!}
 
 </div>
 </body>

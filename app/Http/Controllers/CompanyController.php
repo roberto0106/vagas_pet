@@ -5,39 +5,53 @@ namespace App\Http\Controllers;
 
 use App\Vacancy;
 use Illuminate\Http\Request;
+use App\Charts\PulseChart;
+
 
 class CompanyController extends Controller
 {
-    public function steptwo(){
+    public function steptwo()
+    {
         return view('auth.register_step_2');
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
 
         $user = \Auth::user();
         $usertype = $user->usertype;
 
-        $usertype->cnpj=$request->get('cnpj');
-        $usertype->name=$request->get('razaosocial');
+        $usertype->cnpj = $request->get('cnpj');
+        $usertype->name = $request->get('razaosocial');
         $usertype->save();
 
         return redirect()->route('my_vacancies');
 
     }
 
-    public function minhasvagas(){
+    public function minhasvagas()
+    {
         $user = \Auth::user();
         $usertype = $user->usertype;
-        $minhasvagas = Vacancy::where('id_company',$usertype->id)->get();
+        $minhasvagas = Vacancy::where('id_company', $usertype->id)->get();
 
-        return view('company.my_vacancy',compact('minhasvagas'));
+        $contagem = $minhasvagas->count();
+
+        $chart = new PulseChart();
+        $chart->labels(['Vagas', 'Candidaturas']);
+        $chart->dataset('Conversão','bar',[$contagem,5]);
+
+
+        return view('company.my_vacancy', compact('minhasvagas','chart'));
     }
 
-    public function novavaga(){
+    public function novavaga()
+    {
         return view('company.new_vacancy');
     }
 
-    public function createvaga(Request $request){
+    public function createvaga(Request $request)
+    {
         $user = \Auth::user();
         $usertype = $user->usertype;
         $vaga = new Vacancy;
@@ -49,7 +63,8 @@ class CompanyController extends Controller
         return redirect()->route('my_vacancies');
     }
 
-    public function deletevaga(Request $request){
+    public function deletevaga(Request $request)
+    {
 
         $user = \Auth::user();
         $usertype = $user->usertype;
@@ -60,12 +75,14 @@ class CompanyController extends Controller
 
     }
 
-    public function view_update_vacancy(Request $request){
+    public function view_update_vacancy(Request $request)
+    {
         $vaga = Vacancy::find($request->id);
-        return view('company.update_vacancy',compact('vaga'));
+        return view('company.update_vacancy', compact('vaga'));
     }
 
-    public function updatevaga(Request $request){
+    public function updatevaga(Request $request)
+    {
 
         $vaga = Vacancy::find($request->id);
 
