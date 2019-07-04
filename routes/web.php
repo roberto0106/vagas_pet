@@ -25,6 +25,7 @@ Route::resource('/vacancies', 'VacancyController');
 Route::resource('/candidates', 'CandidateController');
 
 Route::get('/create_album','PhotoController@view_create_photos')->name('view_create_photos');
+Route::get('/public_galery','PhotoController@view_public_galery')->name('public_galery');
 Route::get('/steptwo_empresa','CompanyController@steptwo');
 Route::get('/steptwo_candidato','CandidateController@steptwo');
 Route::get('/download_portifolio','CandidateController@download_photo')->name('downloadportifolio');

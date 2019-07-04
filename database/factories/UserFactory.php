@@ -1,7 +1,10 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Candidate;
 use App\User;
+use App\Vacancy;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -19,7 +22,6 @@ use Faker\Generator as Faker;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'type' => $faker->boolean,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -27,24 +29,17 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(User_type::class, function (Faker $faker) {
+
+$factory->define(Candidate::class, function (Faker $faker) {
     return [
-        'tipo' => $faker->jobTitle(2),
+        'name' => $faker->firstName,
+        'last_name' => $faker->lastName,
     ];
 });
 
-
-$factory->define(Candidato::class, function (Faker $faker) {
+$factory->define(Vacancy::class, function (Faker $faker) {
     return [
-        'nome' => $faker->firstName,
-        'sobrenome' => $faker->lastName,
-    ];
-});
-
-$factory->define(Vagas::class, function (Faker $faker) {
-    return [
-        'vaga' => $faker->jobTitle,
-        'company' => $faker->company,
-        'id_candidato' => $faker->numberBetween($min = 1, $max =50)
-    ];
+        'vacancy' => $faker->jobTitle,
+        'description' => $faker->words(5,true),
+        'company' => $faker->company];
 });

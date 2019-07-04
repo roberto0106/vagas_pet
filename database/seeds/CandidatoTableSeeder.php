@@ -1,5 +1,6 @@
 <?php
 
+use App\Candidate;
 use Illuminate\Database\Seeder;
 
 class CandidatoTableSeeder extends Seeder
@@ -11,6 +12,6 @@ class CandidatoTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Candidato::class, 50)->create();
+        factory(Candidate::class, 50)->create();
     }
 }

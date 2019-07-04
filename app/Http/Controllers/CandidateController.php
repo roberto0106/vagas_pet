@@ -41,7 +41,7 @@ class CandidateController extends Controller
         //Armazenando novos dados no model
         $usertype->name=$request->get('nome');
         $usertype->last_name=$request->get('sobrenome');
-        //$usertype->portifolio_photo_1=$path;
+        $usertype->photo=$path;
 
         //Salvando dados
         $usertype->save();
@@ -49,13 +49,14 @@ class CandidateController extends Controller
         //Redirecionando para a rota Vagas
         return redirect('/vacancies');
 
+
+
     }
 
     public function index()
     {
 
         $candidatos = Candidate::get();
-
 
         return view('candidates',compact('candidatos'));
     }

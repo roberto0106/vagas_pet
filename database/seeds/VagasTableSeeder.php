@@ -1,5 +1,6 @@
 <?php
 
+use App\Vacancy;
 use Illuminate\Database\Seeder;
 
 class VagasTableSeeder extends Seeder
@@ -11,6 +12,6 @@ class VagasTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Vagas::class, 100)->create();
+        factory(Vacancy::class, 50)->create();
     }
 }

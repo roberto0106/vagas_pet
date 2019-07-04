@@ -47,7 +47,7 @@
                         Estatísticas
                     </div>
                     <div class="card-body">
-                        {!! $chart->container() !!}
+
                     </div>
                 </div>
             </div>

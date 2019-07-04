@@ -7,18 +7,26 @@ use Illuminate\Http\Request;
 
 class PhotoController extends Controller
 {
-    public function view_create_photos(){
+    public function view_create_photos()
+    {
         $user = \Auth::user();
         $usertype = $user->usertype;
 
-        $fotos = Photo::where('id_candidate',$usertype->id)->get();
+        $fotos = Photo::where('id_candidate', $usertype->id)->get();
 
         return view('candidate.new_album', compact('fotos'));
     }
 
-    public function upload_photo(Request $request){
+    public function view_public_galery(Request $request)
+    {
+        $fotos = Photo::where('id_candidate', $request->id)->get();
+        return view('candidate.public_galery', compact('fotos'));
+    }
 
-         //Resgatando dados do usuário logado
+    public function upload_photo(Request $request)
+    {
+
+        //Resgatando dados do usuário logado
         $user = \Auth::user();
         $usertype = $user->usertype;
 
@@ -30,24 +38,23 @@ class PhotoController extends Controller
         $fileTypeContent = $file->extension();
 
         //Array de tipos de arquivos válidos
-        $typesValid = array('jpeg','jpg');
+        $typesValid = array('jpeg', 'jpg');
 
         //Validação do formato do arquivo recebido
-        if(in_array($fileTypeContent,$typesValid))
-        {
+        if (in_array($fileTypeContent, $typesValid)) {
             if ($request->file('photo')->isValid()) {
-                $path = $request->photo->store('images',['disk'=>'public']);
+                $path = $request->photo->store('images', ['disk' => 'public']);
 
             }
 
-        }else{
+        } else {
 
-            dd( "No!Unvalidated File");
+            dd("No!Unvalidated File");
         }
 
         //Armazenando novos dados no model
         $foto->id_candidate = $usertype->id;
-        $foto->path_photo= $path;
+        $foto->path_photo = $path;
 
         //Salvando dados
         $foto->save();
@@ -57,7 +64,8 @@ class PhotoController extends Controller
 
     }
 
-    public function delete_photo(Request $request){
+    public function delete_photo(Request $request)
+    {
 
         $user = \Auth::user();
         $usertype = $user->usertype;

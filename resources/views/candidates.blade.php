@@ -2,100 +2,94 @@
 
 @section('content')
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">Dashboard</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Configurações
+                    </div>
+                    <div class="card-body">
+                        <a href="{{ url('/new_vacancies') }}" class="btn btn-primary">Criar nova vaga</a>
 
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Filtros
+                    </div>
+                    <div class="card-body">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1">Todos</label>
+                        </div>
 
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                            <label class="custom-control-label" for="customSwitch2">Avaliados</label>
+                        </div>
 
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                            <label class="custom-control-label" for="customSwitch3">Mais Próximo</label>
+                        </div>
 
-        <div class="card-body">
-          @if (session('status'))
-          <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-          </div>
-          @endif
+                    </div>
+                </div>
+            </div>
 
-          <table class="table table-bordered table-striped">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Sobrenome</th>
-                <th scope="col">Portifólio</th>
-                <th scope="col">Criação</th>
-                <th scope="col">Ultima Atualização</th>
-                <th scope="col">Fazer Contato</th>
-              </tr>
-            </thead>
-            <tbody>
-             @foreach($candidatos as $candidato)
-             <tr>
-              <td> {{$candidato->id}} </td>
-              <td> {{$candidato->nome}} </td>
-              <td> {{$candidato->sobrenome}} </td>
-              <td>
-                  <div class="bd-example">
-                      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                          <ol class="carousel-indicators">
-                              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active bg-dark text-white"></li>
-                              <li data-target="#carouselExampleCaptions" data-slide-to="1" class="bg-dark text-white"></li>
-                              <li data-target="#carouselExampleCaptions" data-slide-to="2" class="bg-dark text-white"></li>
-                          </ol>
-                          <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                  <img src="{{ asset('storage/'.$candidato->portifolio_photo_1) }}" class="d-block w-100" alt="...">
-                                  <div class="carousel-caption d-none d-md-block">
-                                      <h5 class="text-dark">First slide label</h5>
-                                      <p class="text-dark">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                  </div>
-                              </div>
-                              <div class="carousel-item">
-                                  <img src="{{ asset('storage/'.$candidato->portifolio_photo_1) }}" class="d-block w-100" alt="...">
-                                  <div class="carousel-caption d-none d-md-block">
-                                      <h5 class="text-dark">Second slide label</h5>
-                                      <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                  </div>
-                              </div>
-                              <div class="carousel-item">
-                                  <img src="{{ asset('storage/'.$candidato->portifolio_photo_1) }}" class="d-block w-100" alt="...">
-                                  <div class="carousel-caption d-none d-md-block">
-                                      <h5 class="text-dark">Third slide label</h5>
-                                      <p class="text-dark">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev" style="background-color: black">
-                              <span class="carousel-control-prev-icon text-primary" aria-hidden="true"></span>
-                              <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next" style="background-color: black">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Next</span>
-                          </a>
-                      </div>
-                  </div>
-              </td>
+            <div class="col-md-8">
 
-              <td> {{$candidato->created_at}} </td>
-              <td> {{$candidato->updated_at}} </td>
+                @foreach($candidatos as $candidato)
+                    <div class="row">
 
-              <td> {{ Form::open(array('url' => '' . $candidato->id, 'class' => 'center-block')) }}
-                  {{ Form::submit('Contatar', array('class' => 'btn btn-success')) }}
-              {{ Form::close() }}</td>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <ul class="list-group">
+                                            <li class="list-group-item text-center">
+                                                <img src="{{ asset('storage/'. $candidato->photo) }}" alt=""
+                                                     style="width: 90px; height: 90px; border: 1px solid #666666"
+                                                     class="rounded-circle">
+                                            </li>
+                                            <li class="list-group-item text-center">
+                                                {{ $candidato->id }} - {{ $candidato->name }}
+                                            </li>
+                                            <li class="list-group-item text-center">
+                                                <a href="{{ route('public_galery',['id'=>$candidato->id]) }}" class="btn btn-outline-info">Portifólio</a>
+                                            </li>
+                                            <li class="list-group-item text-center">
+                                                <a href="" class="btn btn-outline-primary">Convidar</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <h5 class="card-title">{{$candidato->name}}</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">{{$candidato->id}}</li>
+                                            <li class="list-group-item">{{$candidato->name}}</li>
+                                            <li class="list-group-item">{{$candidato->created_at}}</li>
+                                            <li class="list-group-item">{{$candidato->updated_at}}</li>
+                                        </ul>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural
+                                            lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-muted">Last
+                                                updated {{$candidato->updated_at}}</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
 
-              @endforeach
-            </tbody>
-          </table>
-
-
-
+                @endforeach
+            </div>
 
         </div>
-      </div>
     </div>
-  </div>
-</div>
+
+
+
 @endsection

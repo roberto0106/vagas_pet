@@ -17,6 +17,7 @@ class CreateCandidatesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

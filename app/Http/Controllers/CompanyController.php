@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Vacancy;
 use Illuminate\Http\Request;
-use App\Charts\PulseChart;
+
 
 
 class CompanyController extends Controller
@@ -36,12 +36,8 @@ class CompanyController extends Controller
         $minhasvagas = Vacancy::where('id_company', $usertype->id)->get();
         $contagem = $minhasvagas->count();
 
-        $chart = new PulseChart();
-        $chart->labels(['Vagas', 'Candid']);
-        $chart->dataset('my dataset 1', 'line', [$contagem, 1])
-        ->options(['displayLegend',0]);
 
-        return view('company.my_vacancy', compact('minhasvagas', 'chart'));
+        return view('company.my_vacancy', compact('minhasvagas'));
     }
 
     public function novavaga()
