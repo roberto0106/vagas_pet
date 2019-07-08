@@ -12,7 +12,6 @@
                     </div>
                     <div class="card-body">
                         <a href="{{ url('/new_vacancies') }}" class="btn btn-primary">Criar nova vaga</a>
-
                     </div>
                 </div>
                 <div class="card">

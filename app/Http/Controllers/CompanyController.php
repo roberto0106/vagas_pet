@@ -36,7 +36,6 @@ class CompanyController extends Controller
         $minhasvagas = Vacancy::where('id_company', $usertype->id)->get();
         $contagem = $minhasvagas->count();
 
-
         return view('company.my_vacancy', compact('minhasvagas'));
     }
 
