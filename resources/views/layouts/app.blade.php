@@ -42,6 +42,7 @@
                 <!-- Left Side Of Navbar -->
             @isset(Auth::user()->usertype_type)
                {{ Auth::user()->usertype_type }}
+                    <a href="{{ url('/home') }}">Home</a>
 
                     @if ( Auth::user()->usertype_type == "App\Company")
                         <a href="{{ url('/home') }}">Home</a>
