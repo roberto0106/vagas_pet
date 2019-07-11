@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Candidate;
+use App\JobApplication;
 use App\Vacancy;
 use Illuminate\Http\Request;
 
@@ -37,6 +39,21 @@ class CompanyController extends Controller
         $contagem = $minhasvagas->count();
 
         return view('company.my_vacancy', compact('minhasvagas'));
+    }
+
+    public function interested_applicants(Request $request){
+
+        $user = \Auth::user();
+        $usertype = $user->usertype;
+
+        $interested_applicants = JobApplication::where([
+            'id_company'=>$usertype->id,
+            'id_vacancy'=>$request->vaga
+        ])->pluck('id');
+
+        $candidates = Candidate::wherein('id',$interested_applicants)->get();
+
+        return view('company.interested_applicants',compact('interested_applicants','candidates'));
     }
 
     public function novavaga()

@@ -39,17 +39,18 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <!-- Left Side Of Navbar -->
             @isset(Auth::user()->usertype_type)
-               {{ Auth::user()->usertype_type }}
-                    <a href="{{ url('/home') }}">Home</a>
+
+                    <a href="" class="nav-wrapper">{{ \App\ConfiApp::usertype()[Auth::user()->usertype_type] }}</a>
 
                     @if ( Auth::user()->usertype_type == "App\Company")
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" class="nav-link">Home</a>
                         <a href="{{ route('my_vacancies') }}" class="nav-link">Minhas Vagas</a>
                         <a href="{{ route('my_vacancies') }}" class="nav-link">Meu perfil</a>
                     @elseif (Auth::user()->usertype_type == "App\Candidate")
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" class="nav-link">Home</a>
                         <a href="{{ route('my_vacancies') }}" class="nav-link">Minhas Candidaturas</a>
                         <a href="{{ route('view_create_photos') }}" class="nav-link">Meu perfil</a>
                     @endif

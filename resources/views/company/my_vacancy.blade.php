@@ -71,12 +71,20 @@
                                 <br>
                                 <br>
 
+
                                 @if( $vaga->application->count() >0)
 
-                                    <button type="button" class="btn btn-primary">
+                                    {!! Form::open(['route' => 'interested_applicants']) !!}
+
+                                    {!! Form::hidden('vaga', $vaga->id) !!}
+
+                                    <button type="submit" class="btn btn-primary">
                                         {{ $vaga->application->count() }} Candidatos Interessados <i
                                             class="fas fa-eye"></i>
                                     </button>
+
+                                    {!! Form::close() !!}
+
                                 @else
                                     <a href="" class="btn btn-outline-danger">
                                         {{ $vaga->application->count() }} Candidatos Interessados <i

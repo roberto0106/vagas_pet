@@ -17,20 +17,31 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['middleware' => 'auth'],function () {
+
+    Route::resource('/vacancies', 'VacancyController');
+    Route::resource('/candidates', 'CandidateController');
+
+    Route::get('/create_album','PhotoController@view_create_photos')->name('view_create_photos');
+    Route::get('/public_galery','PhotoController@view_public_galery')->name('public_galery');
+
+    Route::get('/download_portifolio','CandidateController@download_photo')->name('downloadportifolio');
+
+});
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 route::get('/dashboard','HomeController@index')->name('dashboard');
 
-Route::resource('/vacancies', 'VacancyController');
-Route::resource('/candidates', 'CandidateController');
 
-Route::get('/create_album','PhotoController@view_create_photos')->name('view_create_photos');
-Route::get('/public_galery','PhotoController@view_public_galery')->name('public_galery');
 Route::get('/steptwo_empresa','CompanyController@steptwo');
 Route::get('/steptwo_candidato','CandidateController@steptwo');
-Route::get('/download_portifolio','CandidateController@download_photo')->name('downloadportifolio');
+
 
 Route::post('/job_applications', 'JobApplicationController@application')->name('job_applications');
+Route::post('/interested_applicants','CompanyController@interested_applicants')->name('interested_applicants');
 
 
 Route::post('/insert_new_photo','PhotoController@upload_photo')->name('insert_new_photo');
@@ -41,6 +52,7 @@ Route::post('/update_steptwo_empresa','CompanyController@update')->name('update_
 
 Route::get('/my_vacancies','CompanyController@minhasvagas')->name('my_vacancies');
 Route::get('/new_vacancies','CompanyController@novavaga')->name('new_vacancies');
+
 
 Route::post('/create_vacancies','CompanyController@createvaga')->name('create_vacancies');
 Route::post('/delete_vacancies','CompanyController@deletevaga')->name('delete_vacancies');
