@@ -25,6 +25,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -125,7 +126,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/company" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/candidate" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -133,9 +134,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roberto\Vagrant\Projects\vagas_pet\resources\views\candidate" />
       <recent name="C:\Users\Roberto\projects\devs\vagas_pet\resources\views\company" />
       <recent name="C:\Users\Roberto\projects\devs\vagas_pet\resources\views\candidate" />
     </key>
@@ -166,6 +169,7 @@
       <workItem from="1562604126540" duration="371000" />
       <workItem from="1562605111630" duration="4795000" />
       <workItem from="1562869212840" duration="5997000" />
+      <workItem from="1563815788787" duration="8253000" />
     </task>
     <task id="LOCAL-00001" summary="ajustar para nao realizar candidatura duplicada">
       <created>1562270253332</created>

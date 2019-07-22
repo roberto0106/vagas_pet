@@ -43,6 +43,7 @@ Route::get('/steptwo_candidato','CandidateController@steptwo');
 Route::post('/job_applications', 'JobApplicationController@application')->name('job_applications');
 Route::post('/interested_applicants','CompanyController@interested_applicants')->name('interested_applicants');
 
+Route::get('/my_application','JobApplicationController@my_application')->name('my_application');
 
 Route::post('/insert_new_photo','PhotoController@upload_photo')->name('insert_new_photo');
 Route::post('/delete_photo','PhotoController@delete_photo')->name('delete_photo');

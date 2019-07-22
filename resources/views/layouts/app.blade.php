@@ -51,7 +51,7 @@
                         <a href="{{ route('my_vacancies') }}" class="nav-link">Meu perfil</a>
                     @elseif (Auth::user()->usertype_type == "App\Candidate")
                         <a href="{{ url('/home') }}" class="nav-link">Home</a>
-                        <a href="{{ route('my_vacancies') }}" class="nav-link">Minhas Candidaturas</a>
+                        <a href="{{ route('my_application') }}" class="nav-link">Minhas Candidaturas</a>
                         <a href="{{ route('view_create_photos') }}" class="nav-link">Meu perfil</a>
                     @endif
 
