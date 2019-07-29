@@ -27,19 +27,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($vagas as $vagas)
+                            @foreach($vagas as $vaga)
                                 <tr>
-                                    <td> {{$vagas->id}} </td>
-                                    <td> {{$vagas->company}} </td>
-                                    <td> {{$vagas->vacancy}} </td>
-                                    <td> {{$vagas->created_at}} </td>
-                                    <td> {{$vagas->updated_at}} </td>
+                                    <td> {{$vaga->id}} </td>
+                                    <td> {{$vaga->company}} </td>
+                                    <td> {{$vaga->vacancy}} </td>
+                                    <td> {{$vaga->created_at}} </td>
+                                    <td> {{$vaga->updated_at}} </td>
                                     <td>
-                                        {!! Form::open(['route' => 'job_applications']) !!}
-                                        {!! Form::hidden('id_vacancy', $vagas->id) !!}
-                                        {!! Form::hidden('id_company', $vagas->id_company) !!}
-                                        {!! Form::submit('Canidatar-se', array('class' => 'btn btn-success')) !!}
-                                        {!! Form::close() !!}
+                                        @if(in_array($vaga->id,$candidaturas))
+
+                                            <button class="btn btn-warning" disabled="true" id="{{$vaga->id}}">Já Candidatado</button>
+                                        @else
+                                            <button class="btn btn-success application" data-id="{{$vaga->id}}" id="{{$vaga->id}}">Candidatar-se</button>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -50,4 +51,31 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".application").on("click",function(){
+                var id = $(this).data('id');
+                var  textid = "#"+id;
+                $.ajax({
+                    method: "GET",
+                    url: "/api/job_application/"+id,
+                    contentType: "application/json; charset=utf-8",
+                    beforeSend: function() {
+                        $(textid).removeClass("application").attr("disabled", true);
+                    }
+                }).done(function(res){
+                    console.log(res.error);
+                    if(res.error == 'false'){
+                        $(textid).removeClass("application").removeClass("btn-success").addClass("btn-warning").text("Já Candidatado");
+                    }
+                })
+            });
+        });
+    </script>
+
+
+
 @endsection
+
+

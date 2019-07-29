@@ -61,3 +61,6 @@ Route::post('/view_update_vacancies','CompanyController@view_update_vacancy')->n
 Route::post('/update_vacancies','CompanyController@updatevaga')->name('update_vacancies');
 
 
+Route::get('/api/job_application/{job}', 'JobApplicationController@checkin');
+
+

@@ -67,4 +67,8 @@ class CandidateController extends Controller
 
     }
 
+    public function  my_application(){
+        return "Minhas candidaturas";
+    }
+
 }

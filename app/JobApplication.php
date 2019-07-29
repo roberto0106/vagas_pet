@@ -17,7 +17,7 @@ class JobApplication extends Model
     }
 
     public function vacancy(){
-        return $this->hasOne('App\Vacancy','id');
+        return $this->hasOne('App\Vacancy','id', 'id_vacancy');
     }
 
 }
