@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67a1d44e-1f4f-412c-afc7-d8de96a63020" name="Default Changelist" comment="">
+    <list default="true" id="67a1d44e-1f4f-412c-afc7-d8de96a63020" name="Default Changelist" comment="1 Ciclo ok!">
       <change afterPath="$PROJECT_DIR$/resources/views/candidate/my_application.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CandidateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CandidateController.php" afterDir="false" />
@@ -128,7 +128,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/candidate" />
+    <property name="last_opened_file_path" value="C:/cmder/vendor/git-for-windows/bin/git.exe" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -140,6 +140,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roberto\Vagrant_Project\vagas_pet" />
       <recent name="C:\Users\Roberto\Vagrant\Projects\vagas_pet\resources\views\candidate" />
       <recent name="C:\Users\Roberto\projects\devs\vagas_pet\resources\views\company" />
       <recent name="C:\Users\Roberto\projects\devs\vagas_pet\resources\views\candidate" />
@@ -173,6 +174,9 @@
       <workItem from="1562869212840" duration="5997000" />
       <workItem from="1563815788787" duration="8428000" />
       <workItem from="1564418286693" duration="7133000" />
+      <workItem from="1565205014274" duration="714000" />
+      <workItem from="1565206543208" duration="12000" />
+      <workItem from="1565206558772" duration="839000" />
     </task>
     <task id="LOCAL-00001" summary="ajustar para nao realizar candidatura duplicada">
       <created>1562270253332</created>
